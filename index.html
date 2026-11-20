@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>PSYAI | Workshop | 22.11.2026</title>
+<style>
+:root{--bg:#f4f6fa;--card:#fff;--ink:#172033;--muted:#667085;--line:#e5e9f0;--accent:#6257e8;--soft:#f0efff;--green:#147d64}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:#101827;color:#fff;padding:34px 20px 28px}
+.wrap{max-width:900px;margin:auto}
+.eyebrow{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:#b9b7ff;font-weight:750}
+h1{font-size:clamp(2rem,5vw,3rem);line-height:1.08;margin:8px 0}
+header p{color:#cbd3e1;margin:10px 0 0}
+main{padding:24px 16px 56px}
+.toplinks{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px}
+a.btn,.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:#fff;color:var(--ink);font-weight:650;font-size:.92rem}
+a.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.section-label{font-size:.78rem;font-weight:800;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin:24px 0 10px}
+.agenda{display:grid;gap:12px}
+details{background:var(--card);border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 2px 8px #10182708}
+summary{list-style:none;cursor:pointer;padding:17px 18px;display:flex;align-items:center;gap:14px}
+summary::-webkit-details-marker{display:none}
+.time{font-size:.8rem;font-weight:800;color:var(--accent);background:var(--soft);border-radius:8px;padding:6px 9px;white-space:nowrap}
+.summary-title{font-weight:750;flex:1}
+.chevron{color:var(--muted);font-size:1.1rem;transition:transform .2s}
+details[open]>summary .chevron{transform:rotate(180deg)}
+.content{padding:0 18px 20px;border-top:1px solid var(--line)}
+.content h3{font-size:1rem;margin:18px 0 6px}
+.content p{margin:7px 0;color:#39445a}
+ul{padding-left:21px;margin:8px 0}
+li{margin:4px 0}
+.prompt{background:#f7f8fc;border:1px solid var(--line);border-radius:11px;padding:14px;margin:10px 0 16px;white-space:pre-wrap;font-size:.9rem;color:#273247}
+.prompt-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px}
+.prompt-head strong{font-size:.9rem}
+.copy{border:0;background:#e9e7ff;color:#4036b5;border-radius:8px;padding:7px 10px;font-weight:750;cursor:pointer}
+.note{font-size:.86rem;color:var(--muted)}
+.pill{display:inline-block;font-size:.72rem;font-weight:800;color:var(--green);background:#e8f5f0;border-radius:999px;padding:3px 8px;margin-left:5px}
+.resources{display:grid;gap:10px}
+.resource{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 15px;background:#fff;border:1px solid var(--line);border-radius:11px;text-decoration:none;color:var(--ink)}
+.resource span:last-child{color:var(--accent);font-weight:750}
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px}
+details.inner{background:#fbfbfe;box-shadow:none;border-radius:11px;margin:12px 0}
+details.inner summary{padding:12px 14px}
+details.inner .summary-title{font-size:.92rem}
+details.inner .inner-body{padding:0 14px 14px;border-top:1px solid var(--line)}
+.file{display:inline-block;font:600 .82rem ui-monospace,SFMono-Regular,Menlo,monospace;background:#f0efff;color:#4036b5;border-radius:8px;padding:4px 9px;margin:4px 0}
+@media(max-width:560px){summary{align-items:flex-start;gap:10px}.time{font-size:.72rem}.summary-title{font-size:.95rem}.content{padding-left:14px;padding-right:14px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="eyebrow">PSYAI · Workshop · 22.11</div>
+    <h1>PsyAI – AI în cabinet: documente, administrare, confidențialitate și GDPR</h1>
+    <p>Agendă, prompturi și instrumente practice — alege subiectul pe care vrei să îl explorezi.</p>
+  </div>
+</header>
+<main class="wrap">
+  <div class="toplinks">
+    <a class="btn primary" href="https://psiholog-alexsimion.github.io/pdfAnonim/" target="_blank" rel="noopener">Aplicație PDF Anonim ↗</a>
+  </div>
+
+  <div class="section-label">Partea I · Alex · Documente și administrare</div>
+  <div class="agenda">
+    <details open>
+      <summary><span class="time">19:00–19:10</span><span class="summary-title">Intro + Formular de consimțământ: generare și analiză</span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <p><b>Nume document:</b> <span class="file">Template_Consimtamant_Psihologie_GDPR_2026</span></p>
+        <h3>Ce facem</h3>
+        <ul>
+          <li>Generăm cu AI un set de documente de consimțământ pentru cabinet, pornind de la un prompt complex.</li>
+          <li>Analizăm critic rezultatul: temeiuri juridice, structură, ce lipsește, ce trebuie verificat.</li>
+        </ul>
+        <details class="inner">
+          <summary><span class="summary-title">Prompt complex — extinde pentru a vedea textul</span><span class="chevron">⌄</span></summary>
+          <div class="inner-body">
+            <div class="prompt-head"><strong>Prompt complex</strong><button class="copy" type="button">Copiază</button></div>
+            <div class="prompt"># ROL ȘI EXPERTIZĂ
+
+Acționează ca o echipă multidisciplinară formată din:
+
+1. Specialist în protecția datelor (DPO), cu experiență în GDPR și legislația românească.
+2. Jurist specializat în drept medical, dreptul sănătății și profesii liberale.
+3. Specialist în legislația și deontologia profesiei de psiholog din România.
+4. Specialist în securitatea informațiilor și protecția datelor medicale.
+5. Consultant în documentația profesională pentru cabinete individuale de psihologie.
+
+Obiectivul este realizarea unei documentații complete, actualizate la data de 20 noiembrie 2026, pentru un cabinet individual de psihologie din România.
+
+Nu redacta documente generice. Analizează legislația și particularitățile concrete ale cabinetului descris mai jos.
+
+# 1. PROFILUL CABINETULUI
+
+- Forma de organizare: Cabinet individual de psihologie.
+- Titulatură: Psiholog clinician și psihoterapeut.
+- Țara: România.
+- Beneficiari:
+  - Adulți (18+).
+  - Minori (sub 18 ani).
+  - Cupluri.
+  - Familii.
+
+# 2. SERVICII PROFESIONALE
+
+Cabinetul oferă:
+
+- Psihoterapie individuală.
+- Evaluare psihologică.
+- Consiliere psihologică.
+- Psihoterapie de cuplu.
+- Evaluare psihologică pentru minori.
+- Psiho-oncologie.
+
+Serviciile se desfășoară:
+- Fizic, la cabinet.
+- Online.
+
+Platforme de comunicare și desfășurare:
+- Google Meet.
+- Zoom.
+- WhatsApp.
+- Telefon.
+
+# 3. DATE PERSONALE COLECTATE
+
+Cabinetul colectează informații extinse despre beneficiari, inclusiv:
+
+- Date de identificare.
+- Date de contact.
+- Date administrative.
+- Date medicale.
+- Istoric psihologic și psihiatric.
+- Medicație și diagnostice.
+- Informații despre familie și relații.
+- Informații despre situația socială și profesională.
+- Date privind sănătatea mintală și fizică.
+- Rezultate ale testelor psihologice.
+- Rapoarte de evaluare.
+- Note clinice și observații din ședințe.
+- Informații furnizate de reprezentanții legali ai minorilor.
+
+# 4. INFRASTRUCTURA DIGITALĂ
+
+Cabinetul utilizează:
+
+**Google Drive**
+- Cont Gmail personal, gratuit (@gmail.com).
+- Autentificare în doi pași activată.
+- Laptop personal.
+- Acces exclusiv al psihologului.
+- Folder separat pentru fiecare beneficiar.
+- Un document Google Docs pentru toate ședințele unui beneficiar.
+- Sunt păstrate diagnostice, rezultate ale testelor, rapoarte și note clinice.
+
+**Google Forms**
+- Utilizat pentru colectarea datelor de identificare și informațiilor clinice.
+- Răspunsurile sunt păstrate atât în Google Forms, cât și în dosarul beneficiarului.
+
+**Backup**
+- Hard disk extern.
+- Necriptat în prezent.
+
+**Comunicare**
+- WhatsApp: programări, reprogramări, mesaje administrative, comunicare despre starea beneficiarilor, documente și fotografii/documente medicale.
+- E-mail: utilizat inclusiv pentru transmiterea documentelor.
+- Telefon.
+
+# 5. UTILIZAREA INTELIGENȚEI ARTIFICIALE
+
+Psihologul utilizează instrumente AI pentru:
+
+- Redactarea documentelor psihologice.
+- Crearea materialelor psihoeducaționale.
+- Reformularea și corectarea textelor.
+
+Nu introduce intenționat date identificabile despre beneficiari în instrumentele AI.
+
+Nu presupune că simpla eliminare a numelui înseamnă anonimizare. Analizează riscul de reidentificare și stabilește reguli clare pentru utilizarea AI.
+
+Nu propune includerea unui acord generic care să permită utilizarea datelor clinice ale beneficiarilor pentru antrenarea modelelor AI.
+
+# 6. SITUAȚIA ACTUALĂ PRIVIND ARHIVAREA
+
+- Dosarele sunt păstrate nelimitat.
+- În prezent, la solicitarea de ștergere, psihologul intenționează să șteargă toate documentele.
+- Documentele există atât în Google Forms, cât și în Google Drive.
+- Backup-ul nu este criptat.
+- Psihologul cunoaște obligațiile privind incidentele de securitate, dar nu are o procedură scrisă.
+
+Analizează aceste practici și propune măsuri corective.
+
+Nu presupune că dreptul la ștergere este absolut și nici că toate documentele trebuie păstrate nelimitat.
+
+# 7. ANALIZA LEGISLATIVĂ OBLIGATORIE
+
+Verifică versiunile în vigoare la 20.11.2026 și citează surse oficiale.
+
+Analizează cel puțin:
+
+1. Regulamentul (UE) 2016/679 – GDPR.
+2. Legea nr. 190/2018.
+3. Legea nr. 213/2004 privind exercitarea profesiei de psiholog.
+4. Normele metodologice de aplicare a Legii nr. 213/2004.
+5. Codul deontologic al profesiei de psiholog cu drept de liberă practică.
+6. Hotărârile și reglementările COPSI aplicabile.
+7. Legislația privind drepturile pacientului, în măsura în care este aplicabilă serviciilor oferite.
+8. Legislația privind protecția minorilor.
+9. Reglementările privind documentele financiar-contabile.
+10. Legislația privind serviciile psihologice la distanță.
+11. Regulamentul european privind inteligența artificială (AI Act), în măsura aplicabilității.
+12. Reglementările privind transferurile internaționale de date.
+13. Orice alte acte normative relevante.
+
+Folosește surse primare:
+- EUR-Lex.
+- ANSPDCP.
+- Portal Legislativ.
+- COPSI.
+- Comisia Europeană.
+- Documentația oficială Google, WhatsApp, Zoom și Microsoft/OpenAI, după caz.
+
+Nu inventa articole, obligații, termene sau interpretări.
+
+Pentru fiecare prevedere importantă indică:
+- Act normativ.
+- Articol/alineat.
+- Textul sau sensul juridic relevant.
+- Aplicabilitatea concretă pentru cabinet.
+- Sursa oficială.
+
+Dacă nu poți verifica o informație, marcheaz-o explicit ca neverificată.
+
+# 8. ANALIZA TEMEIURILOR JURIDICE
+
+Construiește o matrice pentru fiecare categorie de prelucrare.
+
+Analizează distinct:
+- Art. 6 GDPR.
+- Art. 9 GDPR.
+- Art. 13 și 14 GDPR.
+- Art. 17 GDPR.
+- Art. 20 GDPR.
+- Art. 25 GDPR.
+- Art. 28 GDPR.
+- Art. 30 GDPR.
+- Art. 32 GDPR.
+- Art. 33 și 34 GDPR.
+- Art. 35 GDPR.
+
+Nu utiliza consimțământul GDPR ca temei universal.
+
+Diferențiază:
+- Consimțământul informat pentru intervenția psihologică.
+- Consimțământul GDPR, atunci când acesta este temeiul ales.
+- Alte temeiuri legale aplicabile.
+- Obligațiile profesionale și legale de păstrare.
+
+Explică inclusiv când art. 9 alin. (2) lit. h) GDPR poate fi aplicabil și ce garanții impune.
+
+# 9. SITUAȚII SPECIALE
+
+Realizează analize distincte pentru:
+
+## Minori
+- Acordul reprezentantului legal.
+- Situația în care există doi părinți.
+- Autoritatea părintească.
+- Asentimentul minorului.
+- Confidențialitatea minorului.
+- Comunicarea către părinți.
+- Situațiile de risc și protecție a copilului.
+
+## Cupluri
+- Ambii parteneri ca beneficiari.
+- Consimțământul ambilor.
+- Confidențialitatea informațiilor comunicate individual.
+- Mesaje private.
+- Informații care nu pot fi divulgate celuilalt partener.
+- Limitele confidențialității.
+
+## Familii
+- Identificarea beneficiarilor.
+- Acordul participanților.
+- Participarea minorilor.
+- Gestionarea informațiilor individuale.
+
+## Situații de risc
+- Risc grav pentru beneficiar.
+- Risc pentru alte persoane.
+- Suspiciune de abuz asupra minorilor.
+- Obligații legale de raportare.
+- Solicitări din partea autorităților.
+- Situații de urgență.
+
+Stabilește când și în ce condiții poate fi divulgată informația fără acordul beneficiarului.
+
+Nu prezenta excepțiile de la confidențialitate ca fiind nelimitate.
+
+# 10. ANALIZA PLATFORMELOR
+
+Evaluează separat:
+
+- Gmail gratuit.
+- Google Drive.
+- Google Forms.
+- Google Docs.
+- Google Meet.
+- WhatsApp.
+- Zoom.
+- Instrumentele AI utilizate.
+
+Pentru fiecare identifică:
+- Rolul juridic al furnizorului.
+- Existența unui DPA.
+- Condițiile contractuale.
+- Transferuri internaționale.
+- Subîmputerniciți.
+- Opțiuni de retenție.
+- Setări de securitate.
+- Riscuri.
+- Măsuri recomandate.
+
+Nu considera automat că un serviciu este conform GDPR doar pentru că furnizorul declară că respectă GDPR.
+
+Prezintă o recomandare realistă pentru un cabinet individual cu un singur psiholog, fără a impune automat infrastructură enterprise.
+
+# 11. DOCUMENTELE FINALE DE REALIZAT
+
+Construiește un sistem modular, nu un formular gigantic.
+
+Documentul principal trebuie să conțină:
+
+A. Identificarea cabinetului și a psihologului.
+
+B. Descrierea serviciilor.
+
+C. Scopul și limitele intervenției psihologice.
+
+D. Drepturile și responsabilitățile beneficiarului.
+
+E. Confidențialitatea și limitele sale.
+
+F. Desfășurarea serviciilor online.
+
+G. Reguli privind programările, anulările și comunicarea.
+
+H. Informarea privind prelucrarea datelor.
+
+I. Semnături și confirmări.
+
+Anexe distincte:
+
+1. Notă de informare GDPR.
+2. Consimțământ informat pentru psihoterapie.
+3. Consimțământ informat pentru evaluare psihologică.
+4. Acord pentru servicii online.
+5. Formular pentru minori și reprezentanți legali.
+6. Acord pentru psihoterapie de cuplu.
+7. Acord pentru intervenții familiale.
+8. Acord separat pentru înregistrări audio/video, dacă vor fi utilizate.
+9. Acorduri opționale pentru comunicarea prin canale electronice, dacă sunt justificate.
+10. Informare privind utilizarea instrumentelor digitale și AI, fără a transforma aceasta într-o autorizare generală a prelucrării datelor clinice.
+
+Pentru fiecare document precizează dacă este obligatoriu, recomandat sau opțional.
+
+# 12. REGULI DE REDACTARE
+
+- Limba română.
+- Limbaj juridic corect, dar accesibil beneficiarului.
+- Ton profesionist, clar și empatic.
+- Fără formulări excesiv de defensive.
+- Fără clauze abuzive.
+- Fără renunțări generale la drepturile beneficiarului.
+- Fără consimțăminte grupate artificial.
+- Fără câmpuri obligatorii nejustificate.
+- Fără presupuneri despre datele cabinetului care nu au fost furnizate.
+
+Folosește câmpuri editabile pentru informațiile care lipsesc:
+[DENUMIRE CABINET]
+[NUME PSIHOLOG]
+[COD RUP]
+[ADRESĂ PROFESIONALĂ]
+[DATE CONTACT]
+[ADRESĂ E-MAIL]
+[PERIOADE DE PĂSTRARE]
+[ALTE DATE NECESARE]
+
+# 13. FORMATUL LIVRABILULUI
+
+Livrează rezultatul în această ordine:
+
+FAZA I – Audit juridic și GDPR.
+FAZA II – Analiza riscurilor și planul de remediere.
+FAZA III – Matricea temeiurilor juridice.
+FAZA IV – Arhitectura documentației.
+FAZA V – Redactarea completă a documentelor.
+FAZA VI – Checklist de implementare în cabinet.
+FAZA VII – Verificare finală juridică și deontologică.
+
+Include o matrice cu:
+- Cerință.
+- Situația actuală.
+- Riscul identificat.
+- Acțiunea necesară.
+- Prioritate.
+- Temei legal.
+
+# 14. REGULĂ FUNDAMENTALĂ
+
+Nu inventa informații despre cabinet.
+
+Nu confunda consimțământul informat psihologic cu temeiul juridic GDPR.
+
+Nu considera că semnătura beneficiarului exonerează psihologul de responsabilitățile sale.
+
+Nu afirma că un document este conform GDPR doar pentru că include toate articolele relevante.
+
+Separă clar:
+- Obligații legale.
+- Obligații deontologice.
+- Recomandări de bună practică.
+- Opțiuni organizaționale.
+
+Dacă identifici contradicții între legislație, codul deontologic și practica descrisă, semnalează-le și explică soluția recomandată.</div>
+          </div>
+        </details>
+        <p class="note">Rezultatul AI nu înlocuiește verificarea juridică și deontologică de către profesionist. Pentru demonstrații, folosiți date fictive.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="time">19:10–19:20</span><span class="summary-title">Discuție: documentele de data trecută</span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <h3>Recapitulare și întrebări</h3>
+        <ul>
+          <li>Revenim la documentele realizate la workshopul anterior.</li>
+          <li>Ce a funcționat, ce a ridicat întrebări, ce rămâne de ajustat.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="time">19:20–19:45</span><span class="summary-title">Aplicație PDF Anonim + Q&A </span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <p>Aplicație pentru pregătirea documentelor PDF înainte de a le folosi cu instrumente AI.</p>
+        <p><a class="btn primary" href="https://psiholog-alexsimion.github.io/pdfAnonim/" target="_blank" rel="noopener">Deschide aplicația ↗</a></p>
+        <h3>Cenzurare</h3>
+        <p>Datele identificabile sunt acoperite în document. Rezultatul: <b>raport anonimizat</b>.</p>
+        <h3>Înlocuire</h3>
+        <p>Datele identificabile sunt înlocuite cu alte valori, astfel încât documentul rămâne lizibil și poate fi folosit în continuare.</p>
+        <p class="note">Eliminarea numelui nu înseamnă automat anonimizare: alte detalii (vârstă, localitate, context, situații rare) pot duce la reidentificare. Verificați întotdeauna rezultatul înainte de a-l folosi.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="section-label">Partea II · Florina</div>
+  <div class="agenda">
+    <details>
+      <summary><span class="time">19:45–20:20</span><span class="summary-title">Arhiva documentelor clinice</span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <h3>Ce construim</h3>
+        <p>O arhivă a documentelor completate de un psiholog clinician în situații diverse: evaluări la cerere, evaluări pentru comisiile de încadrare în grad de handicap, evaluări cerute de școli și DGASPC, colaborări cu medici neurologi, psihiatri, spitale și cabinete individuale.</p>
+        <div class="prompt-head"><strong>Prompt TODO</strong><button class="copy" type="button">Copiază</button></div>
+        <div class="prompt">O arhivă a documentelor ce se completează de un psiholog clinician în diverse situații:
+colaborări pornind de la evaluări psihologice la cerere, evaluări pentru instituții, comisiile de încadrare în grad de handicap, evaluări cerute de școli, DGASPC, colaborări cu medici neurologi, medic psihiatru, spital, cabinet individual.
+Pune-mi toate întrebările posibile ca să generezi arhiva cât mai complet.
+Folosește informații oficiale doar, nu halucina.</div>
+        <p class="note">Verificați documentele generate în raport cu sursele oficiale. Pentru demonstrații, folosiți date fictive.</p>
+      </div>
+    </details>
+    <details>
+      <summary><span class="time">20:20–20:30</span><span class="summary-title">Întrebări și feedback</span><span class="chevron">⌄</span></summary>
+      <div class="content">
+        <ul>
+          <li>Întrebări și răspunsuri.</li>
+          <li>Completarea formularului de feedback + review la pagina de Facebook.</li>
+          <li>Next workshop</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="section-label">Link-uri utile</div>
+  <div class="resources">
+    <a class="resource" href="https://psiholog-alexsimion.github.io/pdfAnonim/" target="_blank" rel="noopener"><span><b>Aplicație PDF Anonim</b><br><small>Cenzurare și înlocuire</small></span><span>Deschide ↗</span></a>
+    <a class="resource" href="https://forms.gle/nrPb37CfGjYYeVhT9" target="_blank" rel="noopener"><span><b>Feedback workshop</b><br><small>Formular Google</small></span><span>Deschide ↗</span></a>
+    <a class="resource" href="https://linktr.ee/psyai" target="_blank" rel="noopener"><span><b>PSYAI · Social media</b><br><small>Toate link-urile noastre</small></span><span>Deschide ↗</span></a>
+    <a class="resource" href="https://www.facebook.com/PsyAIAcademy/reviews" target="_blank" rel="noopener"><span><b>Lasă-ne un review</b><br><small>Pagina PSYAI pe Facebook</small></span><span>Deschide ↗</span></a>
+    <a class="resource" href="https://alexandru-mihailsimion02-code.github.io/PsyAI-PromptEngineering/#construieste" target="_blank" rel="noopener"><span><b>Prompt Engineering</b><br><small>Resursa cursului</small></span><span>Deschide ↗</span></a>
+  </div>
+  <footer>PSYAI · Învățăm să folosim AI responsabil și practic.</footer>
+</main>
+<script>
+document.querySelectorAll(".copy").forEach(button=>{
+  button.addEventListener("click",async()=>{
+    const target=button.parentElement.nextElementSibling;
+    const text=target.textContent;
+    try{
+      await navigator.clipboard.writeText(text);
+      const old=button.textContent; button.textContent="Copiat!";
+      setTimeout(()=>button.textContent=old,1400);
+    }catch(e){
+      const range=document.createRange(); range.selectNodeContents(target);
+      const selection=window.getSelection(); selection.removeAllRanges(); selection.addRange(range);
+      button.textContent="Selectat";
+    }
+  });
+});
+</script>
+</body>
+</html>
